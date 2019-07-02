@@ -1,0 +1,34 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/PwmFanControllerDemo.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "publish",
+            "type": "process",
+            "dependsOn": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "command": "publish.cmd",
+            "windows": {
+                "command": "publish.cmd",
+                "args": []
+            },
+            "problemMatcher": []
+        }
+        
+    ]
+}
